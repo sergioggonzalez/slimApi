@@ -1,6 +1,5 @@
-# Aivo Test
+# Slim API
 
-## Objective
 
 A simple API made with PHP Slim Framework, which retrieves the profile of one facebook user, using the Facebook API Graph.
 
