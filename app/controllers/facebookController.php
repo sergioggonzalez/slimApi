@@ -27,11 +27,11 @@ class FacebookController
 	*/
 	public function get($request, $response, $args){
 
-		if(is_numeric($args['id'])){
-			$result = array();
-			$statusCode = 400;
-			$sourceHeader = "From Facebook API";
+		$result = array();
+		$statusCode = 400;
+		$sourceHeader = "From Facebook API";
 
+		if(is_numeric($args['id'])){
 			if(self::USE_REDIS && $this->cache->getItemFromCache($args['id'])){
 				$result = $this->cache->getItemFromCache($args['id']);
 				$sourceHeader = "From Redis cache";
