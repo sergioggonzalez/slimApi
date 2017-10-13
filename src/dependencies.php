@@ -18,6 +18,22 @@ $container['logger'] = function ($c) {
 };
 
 // Facebook Controller
-$container['FacebookController'] = function() {
-    return new App\Controllers\FacebookController;
+$container['FacebookController'] = function($c) {
+    return new App\Controllers\FacebookController($c);
+};
+// cache connfig
+$container['cache'] = function ($c) {
+    $config = [
+        'schema' => 'tcp',
+        'host' => 'localhost',
+        'port' => 6379,
+        // other options
+    ];
+    //$connection = new Predis\Client($config);
+    //return new Symfony\Component\Cache\Adapter\RedisAdapter($connection);
+    return new Predis\Client($config);
+};
+
+$container['CacheService'] = function ($c) {
+    return new App\Services\CacheService($c);
 };
