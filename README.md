@@ -1,7 +1,12 @@
 # Slim API
 
-
 A simple API made with PHP Slim Framework, which retrieves the profile of one facebook user, using the Facebook API Graph.
+
+## Used technologies
+
+PHP
+Slim Framework
+Redis
 
 ## Install
 
@@ -21,6 +26,9 @@ composer install
 ```shell
 php -S localhost:8080 -t public public/index.php
 ```
+## Optional
+
+- You can use Redis for caching the Facebook API Response. Set as true the USE_REDIS const in  [app/controllers/facebookController.php](https://github.com/sergioggonzalez/slimApi/blob/master/app/controllers/facebookController.php#L10)
 
 ## Example url
 
